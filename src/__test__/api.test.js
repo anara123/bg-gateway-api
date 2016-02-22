@@ -30,7 +30,7 @@ describe('/api/arthemetic test', function () {
 		})
 	})
 
-	describe('call twice', function () {
+	describe.skip('call twice', function () {
 		let successRequestsCount = 0
 
 		before(function (beforeDone) {
