@@ -20,6 +20,11 @@ seneca
 var app = require('express')()
   .use(require("body-parser").json())
   .use(seneca.export('web'))
-  .listen(APP_PORT)
+
+
+if(!module.parent){ 
+  app.listen(APP_PORT);
+}
+  
 
 module.exports = app
