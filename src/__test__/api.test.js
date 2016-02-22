@@ -3,15 +3,17 @@
 const request = require('supertest')
 const assert = require('chai').assert
 
+const app = require('../app.js')
+
 describe('/api/arthemetic test', function () {
-	let app
+	// let app
 	
-	before(function (beforeDone) {
-		app = require('../app.js')
-		beforeDone()
+	beforeEach(function (beforeDone) {
+		
+		setTimeout(beforeDone, 1000);
 	})
 	
-	describe.only('simple test', function () {
+	describe('simple test', function () {
 		it('should return game', function (testDone) {
 			request(app)
 				.get('/api/ping')
@@ -30,7 +32,7 @@ describe('/api/arthemetic test', function () {
 		})
 	})
 
-	describe.skip('call twice', function () {
+	describe('call twice', function () {
 		let successRequestsCount = 0
 
 		before(function (beforeDone) {
@@ -58,5 +60,9 @@ describe('/api/arthemetic test', function () {
 		it('should return game', function (testDone) {
 			assert.equal(successRequestsCount, 2)
 		})
+	})
+
+	afterEach(function (afterDone) {
+		app.close(afterDone)
 	})
 })
