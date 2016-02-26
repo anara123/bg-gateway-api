@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/app.js --seneca.log=type:act",
+    "start": "node ./src/app.js",
     "start:dev": "nodemon ./src/app.js --seneca.log=type:act",
     "test": "NODE_ENV=test node_modules/.bin/mocha -c -R spec --recursive ./src",
     "test:dev": "npm run test -- -watch"
