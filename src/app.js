@@ -28,7 +28,7 @@ if(!module.parent){
     .use('seneca-amqp-transport')
     .client({
       type: 'amqp',
-      url: 'amqp://guest@guest:rabbit1:5672/seneca?locale=es_AR',
+      url: process.env.AMQP_URL,
       pin: 'role:arithmetic-game'
     })
   

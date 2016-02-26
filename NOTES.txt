@@ -1,0 +1,4 @@
+- Let the user choose which app to run after the composition finished
+- It will be great if the ports will stay the same as before and not change all the time
+- I failed run two compositions with rabbitmq which uses port 15672
+-  
