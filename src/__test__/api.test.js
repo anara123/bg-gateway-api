@@ -13,7 +13,6 @@ describe('/api/arthemetic test', function () {
 					console.log('1######', response.body);
 				})
 				.expect(200, function(err) {
-					console.log('2######');
 					request
 						.get('/api/ping')
 						.expect(function (response) {
