@@ -12,9 +12,15 @@ var seneca = require('seneca')({
 seneca
 	.use(require('seneca-web'))
   .use('./api.js')
-  .client({ 
-  	port: 8080,
-  	host: SRV_HOST 
+  // .client({ 
+  // 	port: 8080,
+  // 	host: SRV_HOST 
+  // })
+  .use('seneca-amqp-transport')
+  .client({
+    type: 'amqp',
+    url: 'amqp://guest@guest:rabbit1:5672/seneca?locale=es_AR',
+    pin: 'role:arithmetic-game'
   })
 
 var app = require('express')()
